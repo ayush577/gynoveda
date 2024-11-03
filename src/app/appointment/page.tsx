@@ -61,8 +61,8 @@ export default function AppointmentPage() {
 
   /* Form Submit */
   const onSubmit = async (data: z.infer<typeof appointmentSchema>) => {
-    console.log("🚀 ~ onSubmit ~ data:", data);
     setBookingSuccess(data);
+    localStorage.setItem("appointment", JSON.stringify(data));
   };
 
   // Get form state

@@ -1,6 +1,6 @@
 import React from "react";
-import { DataTable } from "./data-table";
-import { columns, Payment } from "./columns";
+import { Payment } from "./columns";
+import { ScheduledMeetingsClient } from "./ScheduleMeetingsClient";
 
 async function getData(): Promise<Payment[]> {
   return [
@@ -63,11 +63,11 @@ async function getData(): Promise<Payment[]> {
 }
 
 export default async function scheduledMeetings() {
-  const data = await getData();
+  const serverData = await getData();
 
   return (
     <div className="container mx-auto p-5">
-      <DataTable columns={columns} data={data} />
+      <ScheduledMeetingsClient initialData={serverData} />
     </div>
   );
 }

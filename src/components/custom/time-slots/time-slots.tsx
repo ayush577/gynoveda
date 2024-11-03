@@ -92,7 +92,7 @@ export default function TimeSlots({
     time: string,
     datetime: Date
   ) => {
-    e.preventDefault(); // Prevent form submission
+    e.preventDefault();
     onTimeSelect(time, datetime);
   };
 
